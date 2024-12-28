@@ -19,11 +19,13 @@ namespace CSharpEgitimKampiMY601
             InitializeComponent();
         }
 
-        CustomerOperations CustomerOperations = new CustomerOperations();
+        CustomerOperations customerOperations = new CustomerOperations();
 
         private void btnList_Click(object sender, EventArgs e)
         {
+            List<Customer> customers = customerOperations.GetAllCustomer();
 
+            dataGridView1.DataSource = customers;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -37,8 +39,39 @@ namespace CSharpEgitimKampiMY601
                 CustomerShoppingCount = int.Parse(txtCustomerShoppingCount.Text)
             };
 
-            CustomerOperations.AddCustomer(customer);            
+            customerOperations.AddCustomer(customer);            
             MessageBox.Show("Ekleme işlemi başarılı.", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string customerId = txtCustomerId.Text;
+            customerOperations.DeleteCustomer(customerId);
+            MessageBox.Show("Silme işlemi başarılı.", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string id = txtCustomerId.Text;
+            var updateCustomer = new Customer()
+            {
+                CustomerId = id,
+                CustomerName = txtCustomerName.Text,
+                CustomerSurname = txtCustomerSurname.Text,
+                CustomerCity = txtCustomerCity.Text,
+                CustomerBalance = decimal.Parse(txtCustomerBalance.Text),
+                CustomerShoppingCount = int.Parse(txtCustomerShoppingCount.Text)
+            };
+
+            customerOperations.UpdateCustomer(updateCustomer);
+            MessageBox.Show("Güncelleme işlemi başarılı.", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnGetById_Click(object sender, EventArgs e)
+        {
+            string id = txtCustomerId.Text;
+            Customer customers = customerOperations.GetCustomerById(id);
+            dataGridView1.DataSource = new List<Customer> { customers };
         }
     }
 }
