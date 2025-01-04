@@ -1,6 +1,6 @@
 ﻿namespace CSharpEgitimKampiMY601
 {
-    partial class Form1
+    partial class FrmCustomerMngDb
     {
         /// <summary>
         /// Required designer variable.
@@ -242,7 +242,7 @@
             this.btnGetById.UseVisualStyleBackColor = false;
             this.btnGetById.Click += new System.EventHandler(this.btnGetById_Click);
             // 
-            // Form1
+            // FrmCustomerMngDb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -268,10 +268,9 @@
             this.Controls.Add(this.txtCustomerId);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form1";
+            this.Name = "FrmCustomerMngDb";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-//            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "FrmCustomer";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

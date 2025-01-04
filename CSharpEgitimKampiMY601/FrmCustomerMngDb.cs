@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace CSharpEgitimKampiMY601
 {
-    public partial class Form1 : Form
+    public partial class FrmCustomerMngDb : Form
     {
-        public Form1()
+        public FrmCustomerMngDb()
         {
             InitializeComponent();
         }
